@@ -12,13 +12,10 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Create a user (optional)
-RUN useradd -ms /bin/bash ubuntu
-
 # Set the working directory
 WORKDIR /home/ubuntu
 
-# Switch to the new user (optional)
+# Switch to the existing 'ubuntu' user
 USER ubuntu
 
 # Default command to keep the container running
